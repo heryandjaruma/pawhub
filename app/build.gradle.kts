@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace = "com.pawhub"
-    compileSdk = 33
+    compileSdk = 31
 
     defaultConfig {
         applicationId = "com.pawhub"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 31
         versionCode = 1
         versionName = "1.0"
 
