@@ -46,27 +46,17 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/btnSignUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:text="Create Account"
-        android:background="@drawable/button_outline"
-
-        android:padding="10dp"
-        android:textColor="@color/jade" />
-
-    <Button
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
-        android:text="Login Instead"
-        android:textColor="#1497D4"
+        android:text="Login"
+        android:textColor="@color/putih"
+        android:backgroundTint="@color/orange"
+        app:cornerRadius="25dp"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="2dp"
 
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:background="@drawable/input_outline"
         android:padding="10dp"
         android:onClick="loginme"
         android:id="@+id/btnLogin"
