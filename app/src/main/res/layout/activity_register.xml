@@ -68,14 +68,14 @@
         app:cornerRadius="25dp"
         app:strokeColor="@color/orange"
         app:strokeWidth="2dp"
-
+        android:fontFamily="@font/poppins_semibold"
         android:padding="10dp" />
 
     <Button
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:text="Login Instead"
-
+        android:fontFamily="@font/poppins_semibold"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:padding="10dp"

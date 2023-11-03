@@ -63,6 +63,6 @@
         android:onClick="loginme"
         android:id="@+id/btnLogin"
         android:layout_marginBottom="10dp"
-
+        android:fontFamily="@font/poppins_semibold"
         android:layout_height="wrap_content"/>
 </LinearLayout>
