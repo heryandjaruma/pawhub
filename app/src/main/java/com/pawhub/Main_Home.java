@@ -25,15 +25,15 @@ public class Main_Home extends AppCompatActivity {
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
-                    break;
-                case R.id.add:
-                    replaceFragment(new AddPhotoFragment());
-                    break;
-                case R.id.profile:
-                    replaceFragment(new ProfileFragment());
-                    break;
+//                case R.id.home:
+//                    replaceFragment(new HomeFragment());
+//                    break;
+//                case R.id.add:
+//                    replaceFragment(new AddPhotoFragment());
+//                    break;
+//                case R.id.profile:
+//                    replaceFragment(new ProfileFragment());
+//                    break;
             }
 
 
