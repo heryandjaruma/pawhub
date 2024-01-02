@@ -2,6 +2,7 @@ package com.pawhub;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -28,6 +29,17 @@ public class DBHelper extends SQLiteOpenHelper {
     public Boolean insert(String email, String password){
         SQLiteDatabase MyDB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
+        contentValues.put("email", email);
+        contentValues.put("password", password);
+        long result = MyDB.insert("users",null, contentValues);
+        if (result == -1) return false;
+        else
+            return true;
     }
+
+//    public Boolean checkemail(String email){
+//        SQLiteDatabase MyDB = this.getWritableDatabase();
+////        Cursor cursor = MyDB.rawQuery("Select from users where email = ?", new String[])
+//    }
+
 }
