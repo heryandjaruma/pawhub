@@ -7,4 +7,7 @@
     <color name="peach">#FFDDD2</color>
     <color name="jade">#83C5BE</color>
     <color name="hijautua">#006D77</color>
+    <color name="danger">#FFD74141</color>
+    <color name="darkgrey">#252525</color>
+    <color name="grey">#919191</color>
 </resources>
