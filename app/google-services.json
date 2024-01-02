@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "7917250360",
+    "project_id": "pawhub-3c87a",
+    "storage_bucket": "pawhub-3c87a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:7917250360:android:d32d41ebf0de4dfac783cd",
+        "android_client_info": {
+          "package_name": "com.pawhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6z7_nm0di0rVvZ0BUlEZ45VhYhiu56lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
