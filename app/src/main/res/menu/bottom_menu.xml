@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/home_fill"
+        android:title="Home" />
+    <item
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/add_photo"
+        android:title="Add Post" />
+    <item
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/profile_outline"
+        android:title="Profie" />
+</menu>

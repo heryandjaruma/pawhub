@@ -55,39 +55,40 @@
         android:id="@+id/etPassword1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
     <Button
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="15dp"
+        android:backgroundTint="@color/orange"
+        android:fontFamily="@font/poppins_semibold"
+        android:padding="10dp"
         android:text="Create Account"
         android:textColor="@color/white"
-        android:backgroundTint="@color/orange"
         app:cornerRadius="25dp"
         app:strokeColor="@color/orange"
-        app:strokeWidth="2dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:padding="10dp" />
+        app:strokeWidth="2dp" />
 
     <Button
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:text="Login Instead"
-        android:fontFamily="@font/poppins_semibold"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:padding="10dp"
-        android:onClick="loginme"
         android:id="@+id/btntoLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
         android:layout_marginBottom="10dp"
-        android:textColor="@color/orange"
         android:backgroundTint="@color/putih"
+        android:fontFamily="@font/poppins_semibold"
+        android:onClick="loginme"
+        android:padding="10dp"
+        android:text="Login Instead"
+        android:textColor="@color/orange"
         app:cornerRadius="25dp"
         app:strokeColor="@color/putih"
-        app:strokeWidth="2dp"
-        android:layout_height="wrap_content"/>
+        app:strokeWidth="2dp" />
 
 
 </LinearLayout>
