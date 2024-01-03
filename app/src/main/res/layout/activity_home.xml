@@ -13,20 +13,28 @@
         android:background="@color/peach"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="137dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/pawhub_unavbar"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="137dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/pawhub_unavbar"/>
+
+
+        </LinearLayout>
 
         <ImageButton
             android:id="@+id/setting"
-            android:layout_width="44dp"
-            android:layout_height="48dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="8dp"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
             android:background="@null"
-            android:src="@drawable/setting_line" />
+            android:layout_marginRight="10dp"
+            android:src="@drawable/setting_line"
+            android:contentDescription="go to setting"/>
 
 
     </LinearLayout>
@@ -45,7 +53,7 @@
             android:id="@+id/recycleview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/activity_post_fragment"
+            tools:listitem="@layout/post_item"
             />
 
     </FrameLayout>
