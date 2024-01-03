@@ -13,6 +13,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pawhub.R;
+import com.pawhub.implementation.AuthRepositoryImpl;
 import com.pawhub.repository.AuthRepository;
 
 
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private AuthRepository authRepository;
+    private new AuthRepositoryImpl authRepository;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
