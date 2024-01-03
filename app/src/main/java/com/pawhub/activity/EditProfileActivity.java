@@ -120,6 +120,9 @@ public class EditProfileActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Void result) {
                         Log.d("PHLOG", "Update profile success!");
+                        Intent intent = new Intent(EditProfileActivity.this, HomeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
                         finish();
                     }
 
