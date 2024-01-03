@@ -57,6 +57,9 @@ public class RegisterActivity extends AppCompatActivity {
                         etUsername.getText().toString()
                 );
                 // TODO start new activity here
+                Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
     }

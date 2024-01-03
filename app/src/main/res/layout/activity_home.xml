@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Main_Home">
+    tools:context=".HomeActivity">
 
     <LinearLayout
         android:id="@+id/toolbar"
@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="200dp"
-            android:src="@drawable/Setting_line" />
+            android:background="@null"
+            android:src="@drawable/setting_line" />
 
 
     </LinearLayout>
