@@ -21,7 +21,7 @@ import java.util.ArrayList;
 
 public class SettingActivity extends AppCompatActivity {
 
-    private new AuthRepositoryImpl authRepository;
+    private AuthRepository authRepository = new AuthRepositoryImpl();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
