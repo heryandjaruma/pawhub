@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:background="@color/peach"
-    android:transitionName="etTransition"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:layout_height="match_parent"
+    android:background="@color/peach"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingHorizontal="15dp"
+    android:transitionName="etTransition"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -18,51 +18,85 @@
         android:layout_height="250dp"/>
 
     <EditText
-        android:inputType="textEmailAddress"
-        android:fontFamily="@font/poppins_regular"
-        android:layout_marginTop="90dp"
-        android:hint="Enter username"
-        android:background="@drawable/input_outline"
-        android:padding="10dp"
-        android:layout_marginBottom="10dp"
-
         android:id="@+id/etEmail"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/input_outline"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/email"
+        android:inputType="text"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/darkgrey"
+        android:textColorHint="@color/grey"
+        android:textSize="14sp" />
 
     <EditText
-        android:inputType="textPassword"
-        android:fontFamily="@font/poppins_regular"
-        android:hint="Enter password"
-        android:layout_marginTop="5dp"
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@drawable/input_outline"
-        android:padding="10dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/etPassword"
+        android:fontFamily="@font/poppins_regular"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingHorizontal="15dp"
+        android:paddingTop="13dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/darkgrey"
+        android:textColorHint="@color/grey"
+        android:textSize="14sp" />
 
+    <TextView
+        android:id="@+id/errorText"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:text="@string/an_error_message"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:textSize="12sp"
+        android:textColor="@color/danger"
+        android:fontFamily="@font/poppins_regular"
+        android:visibility="invisible"
+        />
 
     <Button
-        android:layout_marginTop="10dp"
+        android:id="@+id/signInBtn"
         android:layout_width="match_parent"
-        android:text="Login"
-        android:textColor="@color/putih"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/orange"
-        app:cornerRadius="25dp"
-        app:strokeColor="@color/orange"
-        app:strokeWidth="2dp"
-
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:padding="10dp"
-        android:onClick="loginme"
-        android:id="@+id/btnLogin"
-        android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_semibold"
-        android:layout_height="wrap_content"/>
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="13dp"
+        android:text="@string/sign_in"
+        android:textColor="@color/white"
+        app:cornerRadius="16dp"
+        app:strokeColor="@color/orange"
+        android:textSize="14sp"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/createAccountBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/putih"
+        android:fontFamily="@font/poppins_semibold"
+        android:paddingHorizontal="15dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="13dp"
+        android:text="@string/or_create_account"
+        android:textColor="@color/orange"
+        app:cornerRadius="16dp"
+        app:strokeColor="@color/putih"
+        android:textSize="14sp"
+        app:strokeWidth="2dp"
+        />
+
 </LinearLayout>

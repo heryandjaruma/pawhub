@@ -44,13 +44,15 @@ public class AuthRepositoryImpl implements AuthRepository {
     }
 
     @Override
-    public void loginUser(String email, String password) {
+    public void loginUser(String email, String password, Callback<Boolean> callback) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d("PHLOG", String.format("Logged in as %s", email));
+                        callback.onSuccess(true);
                     } else {
                         Log.w("PHLOG", "Failed to login", task.getException());
+                        callback.onFailure(new Exception("Failed to login"));
                     }
                 });
     }

@@ -37,16 +37,17 @@ public class RegisterActivity extends AppCompatActivity {
         btnCreateAccount = findViewById(R.id.createAccountBtn);
         btnSignIn = findViewById(R.id.signInBtn);
 
-        etUsername = (EditText) findViewById(R.id.etUsername);
-        etEmail = (EditText) findViewById(R.id.etEmail);
-        etPassword = (EditText) findViewById(R.id.etPassword);
-        etPasswordConfirm = (EditText) findViewById(R.id.etPasswordConfirm);
+        etUsername = findViewById(R.id.etUsername);
+        etEmail = findViewById(R.id.etEmail);
+        etPassword = findViewById(R.id.etPassword);
+        etPasswordConfirm = findViewById(R.id.etPasswordConfirm);
 
-        tvError = (TextView) findViewById(R.id.errorText);
+        tvError = findViewById(R.id.errorText);
 
         btnSignIn.setOnClickListener(view -> {
             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
         });
 
         btnCreateAccount.setOnClickListener(view -> {
@@ -56,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity {
                         etPassword.getText().toString(),
                         etUsername.getText().toString()
                 );
-                // TODO start new activity here
                 Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
