@@ -1,9 +1,11 @@
-package com.pawhub;
+package com.pawhub.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.pawhub.R;
 
 public class LoginActivity extends AppCompatActivity {
     @Override

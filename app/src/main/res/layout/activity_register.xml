@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:paddingHorizontal="15dp"
     android:transitionName="etTransition"
-    tools:context=".RegisterActivity">
+    tools:context=".activity.RegisterActivity">
 
     <ImageView
         android:layout_gravity="center"
