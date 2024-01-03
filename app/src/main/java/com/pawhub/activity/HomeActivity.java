@@ -1,4 +1,4 @@
-package com.pawhub;
+package com.pawhub.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -8,7 +8,11 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.pawhub.R;
 import com.pawhub.databinding.ActivityHomeBinding;
+import com.pawhub.fragment.AddPhotoFragment;
+import com.pawhub.fragment.HomeFragment;
+import com.pawhub.fragment.ProfileFragment;
 
 public class HomeActivity extends AppCompatActivity {
     ActivityHomeBinding binding;

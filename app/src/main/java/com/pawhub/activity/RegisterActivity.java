@@ -1,27 +1,17 @@
-package com.pawhub;
+package com.pawhub.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.Timestamp;
+import com.pawhub.R;
 import com.pawhub.implementation.AuthRepositoryImpl;
-import com.pawhub.model.Post;
-import com.pawhub.implementation.PostRepositoryImpl;
 import com.pawhub.repository.AuthRepository;
-import com.pawhub.utils.Callback;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
 
 public class RegisterActivity extends AppCompatActivity {
     EditText etUsername, etEmail, etPassword, etPasswordConfirm;

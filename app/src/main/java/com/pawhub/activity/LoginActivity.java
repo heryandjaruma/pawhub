@@ -1,4 +1,4 @@
-package com.pawhub;
+package com.pawhub.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,6 +13,8 @@ import android.widget.TextView;
 import com.pawhub.implementation.AuthRepositoryImpl;
 import com.pawhub.repository.AuthRepository;
 import com.pawhub.utils.Callback;
+
+import com.pawhub.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etEmail, etPassword;

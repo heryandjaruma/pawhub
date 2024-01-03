@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.pawhub.activity.RegisterActivity;
+
 
 public class LoadingScreen extends AppCompatActivity {
 Handler handler;
