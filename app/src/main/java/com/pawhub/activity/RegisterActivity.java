@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.pawhub.R;
 import com.pawhub.implementation.AuthRepositoryImpl;
 import com.pawhub.repository.AuthRepository;
@@ -18,40 +19,50 @@ public class RegisterActivity extends AppCompatActivity {
     Button btnCreateAccount, btnSignIn;
     TextView tvError;
     AuthRepository authRepository = new AuthRepositoryImpl();
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        btnCreateAccount = findViewById(R.id.createAccountBtn);
-        btnSignIn = findViewById(R.id.signInBtn);
 
-        etUsername = findViewById(R.id.etUsername);
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
-        etPasswordConfirm = findViewById(R.id.etPasswordConfirm);
-
-        tvError = findViewById(R.id.errorText);
-
-        btnSignIn.setOnClickListener(view -> {
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+        if (mAuth.getCurrentUser() != null){
+            Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
-        });
+        } else {
 
-        btnCreateAccount.setOnClickListener(view -> {
-            if (validateRegister()) {
-                authRepository.registerUser(
-                        etEmail.getText().toString(),
-                        etPassword.getText().toString(),
-                        etUsername.getText().toString()
-                );
-                Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+            btnCreateAccount = findViewById(R.id.createAccountBtn);
+            btnSignIn = findViewById(R.id.signInBtn);
+
+            etUsername = findViewById(R.id.etUsername);
+            etEmail = findViewById(R.id.etEmail);
+            etPassword = findViewById(R.id.etPassword);
+            etPasswordConfirm = findViewById(R.id.etPasswordConfirm);
+
+            tvError = findViewById(R.id.errorText);
+
+            btnSignIn.setOnClickListener(view -> {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
-            }
-        });
+            });
+
+            btnCreateAccount.setOnClickListener(view -> {
+                if (validateRegister()) {
+                    authRepository.registerUser(
+                            etEmail.getText().toString(),
+                            etPassword.getText().toString(),
+                            etUsername.getText().toString()
+                    );
+                    Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        }
+
     }
 
     protected boolean validateRegister() {
