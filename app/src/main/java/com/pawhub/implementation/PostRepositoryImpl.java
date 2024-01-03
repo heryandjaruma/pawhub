@@ -19,7 +19,9 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public void addPost(Post post, Callback<Void> callback) {
-        db.collection(COLLECTION).add(post)
+        db.collection(COLLECTION)
+                .document(post.getPost_id())
+                .set(post)
                 .addOnSuccessListener(documentReference -> callback.onSuccess(null))
                 .addOnFailureListener(callback::onFailure);
     }
