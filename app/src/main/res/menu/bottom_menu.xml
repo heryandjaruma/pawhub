@@ -5,14 +5,14 @@
         android:id="@+id/home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:icon="@drawable/home_fill"
+        android:icon="@drawable/logopawhub"
         android:title="Home" />
     <item
         android:id="@+id/add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/add_photo"
-        android:title="Add Post" />
+        android:title="Add" />
     <item
         android:id="@+id/profile"
         android:layout_width="wrap_content"

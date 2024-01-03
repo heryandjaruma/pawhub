@@ -13,22 +13,16 @@
         android:theme="@style/Theme.PawHub"
         tools:targetApi="31">
         <activity
-            android:name=".Main_Home"
-            android:exported="false" />
-        <activity
-            android:name=".ProfileActivity"
+            android:name=".LoadingScreen"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".LoadingScreen"
+            android:name=".Main_Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
