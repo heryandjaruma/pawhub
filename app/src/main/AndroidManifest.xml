@@ -16,6 +16,9 @@
         android:theme="@style/Theme.PawHub"
         tools:targetApi="31">
         <activity
+            android:name=".AddPawgenicActivity"
+            android:exported="false" />
+        <activity
             android:name=".fragment.PostFragment"
             android:exported="false" />
         <activity

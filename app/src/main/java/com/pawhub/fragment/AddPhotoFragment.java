@@ -1,13 +1,18 @@
 package com.pawhub.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pawhub.AddPawgenicActivity;
 import com.pawhub.R;
 
 /**
@@ -16,6 +21,8 @@ import com.pawhub.R;
  * create an instance of this fragment.
  */
 public class AddPhotoFragment extends Fragment {
+
+    private CardView add_pawgenic;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,6 +68,22 @@ public class AddPhotoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_add_photo, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        add_pawgenic = view.findViewById(R.id.card_add_pawgenic);
+
+        add_pawgenic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), AddPawgenicActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
