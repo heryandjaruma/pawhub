@@ -31,10 +31,30 @@ public class UserRepositoryImpl implements UserRepository {
     }
 
     @Override
-    public void getUser(Callback<User> callback) {
+    public void getThisUser(Callback<User> callback) {
         FirebaseUser authUser = FirebaseAuth.getInstance().getCurrentUser();
         db.collection(COLLECTION)
                 .document(authUser.getUid())
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        DocumentSnapshot document = task.getResult();
+                        if (document.exists()) {
+                            User user = document.toObject(User.class);
+                            callback.onSuccess(user);
+                        } else {
+                            callback.onFailure(new Exception("User not found"));
+                        }
+                    } else {
+                        callback.onFailure(task.getException());
+                    }
+                });
+    }
+
+    @Override
+    public void getUser(String uid, Callback<User> callback) {
+        db.collection(COLLECTION)
+                .document(uid)
                 .get()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {

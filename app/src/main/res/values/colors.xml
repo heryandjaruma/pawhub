@@ -3,6 +3,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#E29578</color>
+    <color name="highlight">#E37B7B</color>
+    <color name="like">#D15050</color>
     <color name="putih">#EDF6F9</color>
     <color name="peach">#FFDDD2</color>
     <color name="jade">#83C5BE</color>
