@@ -1,7 +1,7 @@
 Members:
-2502028140 - Heryan Djaruma
-2540117621 – Jonathan Lim
-2501978774 - Chelsea Marchelle
+-2502028140 - Heryan Djaruma
+-2540117621 - Jonathan Lim
+-2501978774 - Chelsea Marchelle
 
 # PawHub
 For pets with fur, PawHub is an app for sharing photos. Users of the app can communicate with other pet owners and post pictures of their animals.
