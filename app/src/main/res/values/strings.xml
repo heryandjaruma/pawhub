@@ -19,4 +19,6 @@
     <string name="an_error_message">An Error Message</string>
     <string name="or_create_account">Or, Create Account</string>
     <string name="sign_in">Sign In</string>
+    <string name="dummy_number">300</string>
+    <string name="paws">paws</string>
 </resources>

@@ -3,6 +3,7 @@ package com.pawhub.model;
 import com.google.firebase.Timestamp;
 
 public class Post {
+    private String post_id;
     private String uid;
     private Timestamp date_posted;
     private String image;
@@ -10,12 +11,14 @@ public class Post {
 
     public Post() {}
 
-    public Post(String uid, Timestamp date_posted, String image, Integer like_count) {
+    public Post(String post_id, String uid, Timestamp date_posted, String image, Integer like_count) {
+        this.post_id = post_id;
         this.uid = uid;
         this.date_posted = date_posted;
         this.image = image;
         this.like_count = like_count;
     }
+
 
     public String getUid() {
         return uid;
@@ -47,5 +50,13 @@ public class Post {
 
     public void setLike_count(Integer like_count) {
         this.like_count = like_count;
+    }
+
+    public String getPost_id() {
+        return post_id;
+    }
+
+    public void setPost_id(String post_id) {
+        this.post_id = post_id;
     }
 }

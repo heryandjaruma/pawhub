@@ -1,24 +1,16 @@
 package com.pawhub.model;
 
 public class User {
-    private String email;
     private String username;
     private String profile_picture;
     private Integer post_count;
 
-    public User(String email, String username, String profile_picture, Integer post_count) {
-        this.email = email;
+    public User() {}
+
+    public User(String username, String profile_picture, Integer post_count) {
         this.username = username;
         this.profile_picture = profile_picture;
         this.post_count = post_count;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getUsername() {

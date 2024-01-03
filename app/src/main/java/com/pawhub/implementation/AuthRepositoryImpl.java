@@ -21,7 +21,6 @@ public class AuthRepositoryImpl implements AuthRepository {
                         Log.d("PHLOG", "createUserWithEmail:success");
                         userRepository.addUser(
                                 new User(
-                                        email,
                                         username,
                                         "https://firebasestorage.googleapis.com/v0/b/pawhub-3c87a.appspot.com/o/warcat.jpg?alt=media&token=53513ffd-a860-4c2c-9e7a-065d058955d6",
                                         0
