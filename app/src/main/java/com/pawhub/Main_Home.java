@@ -1,5 +1,7 @@
 package com.pawhub;
 
+import static com.pawhub.R.id.home;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -22,15 +24,17 @@ public class Main_Home extends AppCompatActivity {
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-            int itemId = item.getItemId();
-            if (itemId == R.id.home) {
-                replaceFragment(new HomeFragment());
-            } else if (itemId == R.id.add) {
-                replaceFragment(new AddPhotoFragment());
-            } else if (itemId == R.id.profile) {
-                replaceFragment(new ProfileFragment());
+            switch (item.getItemId()){
+//                case R.id.home:
+//                    replaceFragment(new HomeFragment());
+//                    break;
+//                case R.id.add:
+//                    replaceFragment(new AddPhotoFragment());
+//                    break;
+//                case R.id.profile:
+//                    replaceFragment(new ProfileFragment());
+//                    break;
             }
-
 
 
             return true;
