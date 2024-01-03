@@ -21,4 +21,6 @@
     <string name="sign_in">Sign In</string>
     <string name="dummy_number">300</string>
     <string name="paws">paws</string>
+    <string name="posts">posts</string>
+    <string name="edit_profile">Edit Profile</string>
 </resources>

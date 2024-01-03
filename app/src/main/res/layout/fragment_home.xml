@@ -11,6 +11,6 @@
         android:id="@+id/recycleview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/activity_post_fragment"
+        tools:listitem="@layout/post_item"
         />
 </FrameLayout>
