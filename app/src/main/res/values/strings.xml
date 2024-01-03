@@ -26,4 +26,6 @@
     <string name="choose_image">Choose Image</string>
     <string name="upload_image">Upload Image</string>
     <string name="cancel_upload">Cancel Upload</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="cancel">Cancel</string>
 </resources>
