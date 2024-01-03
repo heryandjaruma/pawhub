@@ -4,23 +4,36 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import com.pawhub.PostsAdapter;
 import com.pawhub.R;
 import com.pawhub.databinding.ActivityHomeBinding;
 import com.pawhub.fragment.AddPhotoFragment;
 import com.pawhub.fragment.HomeFragment;
 import com.pawhub.fragment.ProfileFragment;
+import com.pawhub.implementation.PostRepositoryImpl;
+import com.pawhub.model.Post;
+import com.pawhub.repository.PostRepository;
+import com.pawhub.utils.Callback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+
+
     ActivityHomeBinding binding;
     @SuppressLint("NonConstantResourceId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
 
@@ -36,9 +49,11 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             return true;
+
         });
 
     }
+
 
     private void replaceFragment(Fragment fragment){
 
@@ -49,3 +64,4 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 }
+

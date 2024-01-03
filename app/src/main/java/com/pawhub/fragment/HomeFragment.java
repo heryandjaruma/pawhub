@@ -2,13 +2,25 @@ package com.pawhub.fragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.pawhub.PostsAdapter;
 import com.pawhub.R;
+import com.pawhub.implementation.PostRepositoryImpl;
+import com.pawhub.model.Post;
+import com.pawhub.repository.PostRepository;
+import com.pawhub.utils.Callback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +28,9 @@ import com.pawhub.R;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+    private PostsAdapter postsAdapter;
+    private ArrayList<Post> posts = new ArrayList<Post>();
+    private PostRepository postRepository = new PostRepositoryImpl();
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -55,12 +70,35 @@ public class HomeFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        return view;
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        postRepository.getAllPosts(new Callback<List<Post>>() {
+            @Override
+            public void onSuccess(List<Post> result) {
+                posts.addAll(result);
+            }
+
+            @Override
+            public void onFailure(Exception e) {
+
+            }
+        });
+        RecyclerView recyclerView = view.findViewById(R.id.recycleview);
+        postsAdapter = new PostsAdapter(posts);
+        recyclerView.setAdapter(postsAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
     }
 }
