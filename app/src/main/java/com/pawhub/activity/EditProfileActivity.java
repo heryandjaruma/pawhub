@@ -8,9 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.pawhub.R;
 
 
-public class ProfileActivity extends AppCompatActivity {
+public class EditProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_editprofile);
     }
 }
