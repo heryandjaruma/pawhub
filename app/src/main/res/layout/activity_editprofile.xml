@@ -5,144 +5,133 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.EditProfileActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="15dp"
+    >
 
     <LinearLayout
-        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:background="@color/peach"
-        tools:ignore="MissingConstraints">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image_edit"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_profile"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="137dp"
-            android:layout_height="match_parent"
-            android:src="@drawable/pawhub_unavbar"/>
-
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:translationY="-20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/edit_icon"
+            android:padding="4dp"
+            android:background="@drawable/rounded_corners"
+            android:backgroundTint="@color/white"
+            android:tint="@color/white"
+            android:id="@+id/edit_image_button"
+            />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/profileImageChange"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="40dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/default_profile"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="121dp" />
-
-    <ImageButton
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="250dp"
-        android:src="@drawable/edit_icon"
-        android:contentDescription="edit photo profil"/>
 
 
     <androidx.cardview.widget.CardView
         android:id="@+id/profile"
-        android:layout_width="410dp"
-        android:layout_height="254dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:cardCornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingClass,MissingConstraints"
-        tools:layout_editor_absoluteY="70dp"
         android:orientation="horizontal">
 
         <LinearLayout
-            android:id="@+id/profilecard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@color/light_grey"
+            >
+
+            <EditText
+                android:id="@+id/etUsername_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/input_outline"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/username"
+                android:inputType="text"
+                android:paddingHorizontal="15dp"
+                android:paddingTop="13dp"
+                android:paddingBottom="10dp"
+                android:textColor="@color/darkgrey"
+                android:textColorHint="@color/grey"
+                android:textSize="14sp"
+                />
+
+            <EditText
+                android:id="@+id/etEmail_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/input_outline"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="15dp"
+                android:paddingBottom="10dp"
+                android:paddingTop="13dp"
+                android:textSize="14sp"
+                android:textColor="@color/light_grey"
+                android:textColorHint="@color/grey"
+                android:enabled="false"
+                android:text="email@email.com"
+            />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="7dp"
-                android:orientation="vertical">
+                android:orientation="horizontal"
+                android:gravity="center">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:backgroundTint="@color/orange"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="15dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="13dp"
+                    android:text="@string/cancel"
+                    android:textColor="@color/white"
+                    app:cornerRadius="16dp"
+                    app:strokeColor="@color/orange"
+                    android:textSize="12sp"
+                    app:strokeWidth="2dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="40dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Username "
-                        android:textSize="18dp" />
 
-                    <TextView
-                        android:id="@+id/username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="40dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text=": Username"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <Button
+                    android:id="@+id/btn_save"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Email          "
-                        android:textSize="18dp" />
-
-                    <TextView
-                        android:id="@+id/email"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text=": email@gmail.com"
-                        android:textSize="18dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/btn_save"
-                        android:layout_width="125dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Save"
-                        android:backgroundTint="@color/jade"/>
-                    <Button
-                        android:id="@+id/btn_cancel"
-                        android:layout_width="125dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:layout_marginTop="20dp"
-                        android:text="Cancel"
-                        android:backgroundTint="@color/orange"/>
-                </LinearLayout>
-
+                    android:backgroundTint="@color/jade"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:paddingHorizontal="15dp"
+                    android:paddingBottom="10dp"
+                    android:paddingTop="13dp"
+                    android:text="@string/save_profile"
+                    android:textColor="@color/white"
+                    app:cornerRadius="16dp"
+                    app:strokeColor="@color/jade"
+                    android:textSize="12sp"
+                    android:layout_marginStart="20dp"
+                    app:strokeWidth="2dp" />
 
             </LinearLayout>
         </LinearLayout>

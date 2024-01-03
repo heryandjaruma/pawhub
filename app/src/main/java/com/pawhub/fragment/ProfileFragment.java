@@ -1,5 +1,6 @@
 package com.pawhub.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -9,12 +10,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.pawhub.R;
+import com.pawhub.activity.EditProfileActivity;
 import com.pawhub.implementation.UserRepositoryImpl;
 import com.pawhub.model.User;
 import com.pawhub.repository.UserRepository;
@@ -32,6 +35,7 @@ public class ProfileFragment extends Fragment {
     private ImageView profile_picture;
     private FirebaseUser authUser = FirebaseAuth.getInstance().getCurrentUser();
     private UserRepository userRepository = new UserRepositoryImpl();
+    private Button editprofile_btn;
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -87,6 +91,7 @@ public class ProfileFragment extends Fragment {
         username_profile = view.findViewById(R.id.username_in_profile);
         post_count_profile = view.findViewById(R.id.post_count_profile);
         profile_picture = view.findViewById(R.id.profile_picture);
+        editprofile_btn = view.findViewById(R.id.btn_editProfile);
 
         userRepository.getThisUser(new Callback<User>() {
             @Override
@@ -99,6 +104,14 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onFailure(Exception e) {
 
+            }
+        });
+
+        editprofile_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), EditProfileActivity.class);
+                startActivity(intent);
             }
         });
 

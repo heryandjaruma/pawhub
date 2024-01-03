@@ -1,12 +1,16 @@
 package com.pawhub.implementation;
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.pawhub.model.User;
@@ -79,5 +83,20 @@ public class UserRepositoryImpl implements UserRepository {
                 .set(updatedUser)
                 .addOnSuccessListener(aVoid -> callback.onSuccess(null))
                 .addOnFailureListener(callback::onFailure);
+    }
+
+    @Override
+    public void increaseThisUserPostCount(Callback<Void> callback) {
+        FirebaseUser authUser = FirebaseAuth.getInstance().getCurrentUser();
+        DocumentReference postRef = FirebaseFirestore.getInstance().collection("users").document(authUser.getUid());
+        postRef.update("post_count", FieldValue.increment(1))
+                .addOnSuccessListener(aVoid -> {
+                    Log.d("PHLOG", "Increase post count");
+                    callback.onSuccess(null);
+                })
+                .addOnFailureListener(e -> {
+                    Log.e("PHLOG", "Error occurred when trying to increase post count");
+                    callback.onFailure(e);
+                });
     }
 }

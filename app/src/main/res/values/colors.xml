@@ -12,4 +12,5 @@
     <color name="danger">#FFD74141</color>
     <color name="darkgrey">#252525</color>
     <color name="grey">#919191</color>
+    <color name="light_grey">#E1E1E1</color>
 </resources>

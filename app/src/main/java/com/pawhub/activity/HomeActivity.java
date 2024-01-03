@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 
 import com.pawhub.PostsAdapter;
 import com.pawhub.R;
@@ -26,6 +29,7 @@ import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
 
+    private ImageButton setting_button;
 
     ActivityHomeBinding binding;
     @SuppressLint("NonConstantResourceId")
@@ -36,6 +40,8 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
         replaceFragment(new HomeFragment());
+
+        setting_button = findViewById(R.id.setting);
 
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
@@ -50,6 +56,14 @@ public class HomeActivity extends AppCompatActivity {
 
             return true;
 
+        });
+
+        setting_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SettingActivity.class);
+                startActivity(intent);
+            }
         });
 
     }

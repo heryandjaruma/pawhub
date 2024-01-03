@@ -12,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/to_upload_image"
-        android:scaleType="fitXY"
-        android:maxHeight="500dp"
-        android:minHeight="200dp"
+        android:scaleType="fitCenter"
         />
     
     <LinearLayout

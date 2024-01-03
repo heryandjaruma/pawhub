@@ -19,8 +19,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.pawhub.implementation.PostRepositoryImpl;
+import com.pawhub.implementation.UserRepositoryImpl;
 import com.pawhub.model.Post;
 import com.pawhub.repository.PostRepository;
+import com.pawhub.repository.UserRepository;
 import com.pawhub.utils.Callback;
 import com.squareup.picasso.Picasso;
 
@@ -32,6 +34,7 @@ public class AddPawgenicActivity extends AppCompatActivity {
     private static final int READ_MEDIA_IMAGES_PERMISSION_CODE = 100;
     StorageReference storageReference;
     private PostRepository postRepository = new PostRepositoryImpl();
+    private UserRepository userRepository = new UserRepositoryImpl();
 
     private ImageView toUpload;
     private Button cancelButton, uploadButton;
@@ -102,7 +105,21 @@ public class AddPawgenicActivity extends AppCompatActivity {
                             public void onSuccess(Void result) {
                                 Log.d("PHLOG", "Success uploading image: " + downloadUri.toString());
                                 Toast.makeText(AddPawgenicActivity.this, "Success uploading your Pawgenic!", Toast.LENGTH_SHORT).show();
+
+                                userRepository.increaseThisUserPostCount(new Callback<Void>() {
+                                    @Override
+                                    public void onSuccess(Void result) {
+                                        Log.d("PHLOG", "Success increasing this user post count ");
+                                        finish();
+                                    }
+
+                                    @Override
+                                    public void onFailure(Exception e) {
+
+                                    }
+                                });
                                 finish();
+
                             }
 
                             @Override

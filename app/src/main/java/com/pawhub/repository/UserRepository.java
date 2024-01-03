@@ -8,5 +8,6 @@ public interface UserRepository {
     void getThisUser(Callback<User> callback);
     void getUser(String uid, Callback<User> callback);
     void updateUser(User updatedUser, Callback<Void> callback);
+    void increaseThisUserPostCount(Callback<Void> callback);
 
 }
