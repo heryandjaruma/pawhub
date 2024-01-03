@@ -23,4 +23,7 @@
     <string name="paws">paws</string>
     <string name="posts">posts</string>
     <string name="edit_profile">Edit Profile</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="upload_image">Upload Image</string>
+    <string name="cancel_upload">Cancel Upload</string>
 </resources>
