@@ -91,20 +91,12 @@ public class HomeFragment extends Fragment {
             public void onSuccess(List<Post> result) {
                 posts.addAll(result);
                 postsAdapter.notifyDataSetChanged(); // Notify the adapter
-//                for (Post p :
-//                        result) {
-//                    Log.d("PHLOG", p.getDate_posted().toString());
-//                }
-//                Log.d("PHLOG", "I WAS HERE 2");
             }
 
             @Override
             public void onFailure(Exception e) {
-//                Log.d("PHLOG", "I WAS HERE 3");
-
             }
         });
-//        Log.d("PHLOG", "I WAS HERE 1");
         RecyclerView recyclerView = view.findViewById(R.id.recycleview);
         postsAdapter = new PostsAdapter(posts);
         recyclerView.setAdapter(postsAdapter);

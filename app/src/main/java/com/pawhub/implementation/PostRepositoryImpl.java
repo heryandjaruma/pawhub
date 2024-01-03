@@ -41,33 +41,36 @@ public class PostRepositoryImpl implements PostRepository {
 
     @Override
     public void getAllPosts(Callback<List<Post>> callback) {
-        db.collection(COLLECTION).get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    List<Post> posts = queryDocumentSnapshots.toObjects(Post.class);
-                    callback.onSuccess(posts);
-                })
-                .addOnFailureListener(callback::onFailure);
 //        db.collection(COLLECTION).get()
 //                .addOnSuccessListener(queryDocumentSnapshots -> {
-//                    List<Post> posts = new ArrayList<>();
-//                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-//                        Post post = documentSnapshot.toObject(Post.class);
-//                        posts.add(post);
-//                    }
+//                    List<Post> posts = queryDocumentSnapshots.toObjects(Post.class);
 //                    callback.onSuccess(posts);
 //                })
 //                .addOnFailureListener(callback::onFailure);
+        db.collection(COLLECTION).get()
+                .addOnSuccessListener(queryDocumentSnapshots -> {
+                    List<Post> posts = new ArrayList<>();
+                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                        Post post = documentSnapshot.toObject(Post.class);
+                        post.setPost_id(documentSnapshot.getId());
+                        posts.add(post);
+                    }
+                    callback.onSuccess(posts);
+                })
+                .addOnFailureListener(callback::onFailure);
     }
 
     @Override
-    public void updateLikeCount(String postId) {
+    public void updateLikeCount(String postId, Callback<Void> callback) {
         DocumentReference postRef = FirebaseFirestore.getInstance().collection("posts").document(postId);
         postRef.update("like_count", FieldValue.increment(1))
                 .addOnSuccessListener(aVoid -> {
                     Log.d("PHLOG", "Liked a post");
+                    callback.onSuccess(null);
                 })
                 .addOnFailureListener(e -> {
                     Log.e("PHLOG", "Error occurred when trying to like a post");
+                    callback.onFailure(e);
                 });
     }
 
