@@ -13,10 +13,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.pawhub.R;
+import com.pawhub.repository.AuthRepository;
+
 
 import java.util.ArrayList;
 
 public class SettingActivity extends AppCompatActivity {
+
+    private AuthRepository authRepository;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
@@ -57,6 +62,8 @@ public class SettingActivity extends AppCompatActivity {
         }
 
         private void performLogout(){
+            authRepository.logoutUser();
+
             Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
